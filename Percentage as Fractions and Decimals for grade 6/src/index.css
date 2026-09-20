@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Compact mode: activates only on short viewports (e.g. 1366x768 laptops) so 1080p keeps the full-size look */
+@custom-variant short (@media (max-height: 820px));
+
+@layer base {
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #060212;
+    color: #F3F4F6;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Fredoka One', 'Fredoka', cursive, sans-serif;
+    font-weight: 700;
+  }
+
+  .font-body {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+/* Cosmic Ambient Background matching screenshot exactly */
+.cosmic-bg {
+  background-color: #0b041c;
+  background-image: 
+    radial-gradient(ellipse 90% 65% at 50% 18%, #311263 0%, #170a38 52%, #0b041c 100%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism Cards matching screenshot */
+.cosmic-card {
+  background: rgba(18, 10, 44, 0.78);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Gold CTA Button styling */
+.btn-gold {
+  background: linear-gradient(135deg, #FFB800 0%, #F59E0B 100%);
+  color: #0F0B1E;
+  font-family: 'Fredoka One', 'Fredoka', cursive, sans-serif;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(255, 184, 0, 0.4);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 184, 0, 0.6);
+}
+.btn-gold:active {
+  transform: translateY(1px);
+}
+
+/* Glow Shadows */
+.shadow-glow-gold {
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.4);
+}
+.shadow-glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+.shadow-glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* High Contrast Fluid Typography Utilities */
+.text-fluid-h1 {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  line-height: 1.15;
+}
+.text-fluid-h2 {
+  font-size: clamp(1.35rem, 2.5vw, 2.25rem);
+  line-height: 1.2;
+}
+.text-fluid-body {
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  line-height: 1.5;
+}
+
+/* Wrong-answer shake (used by Number Line Sorter / Imposter Detective) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}

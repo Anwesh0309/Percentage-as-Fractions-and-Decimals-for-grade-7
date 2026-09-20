@@ -1,0 +1,97 @@
+// 10 Practice Worlds Definitions — Percentage as Fractions and Decimals
+
+export const worldsData = [
+  {
+    id: 1,
+    title: "Apple Orchard",
+    questionRange: "Questions 1–10",
+    focus: "Percent means 'out of 100' — read it from a hundred grid",
+    difficulty: "Easy",
+    icon: "🍎",
+    color: "from-red-500 to-amber-600",
+  },
+  {
+    id: 2,
+    title: "Sticker Studio",
+    questionRange: "Questions 11–20",
+    focus: "Write any percent as a fraction over 100",
+    difficulty: "Easy",
+    icon: "⭐",
+    color: "from-amber-400 to-yellow-500",
+  },
+  {
+    id: 3,
+    title: "Toy Town",
+    questionRange: "Questions 21–30",
+    focus: "Reduce percent fractions to simplest form (e.g. 25% = 1/4)",
+    difficulty: "Easy-Med",
+    icon: "🧸",
+    color: "from-purple-500 to-pink-600",
+  },
+  {
+    id: 4,
+    title: "Puppy Park",
+    questionRange: "Questions 31–40",
+    focus: "Divide by 100 — slide the decimal point two places left",
+    difficulty: "Medium",
+    icon: "🐶",
+    color: "from-pink-500 to-rose-600",
+  },
+  {
+    id: 5,
+    title: "Pencil Palace",
+    questionRange: "Questions 41–50",
+    focus: "Multiply by 100 — slide the decimal point two places right",
+    difficulty: "Medium",
+    icon: "✏️",
+    color: "from-rose-500 to-amber-600",
+  },
+  {
+    id: 6,
+    title: "Group Galaxy",
+    questionRange: "Questions 51–60",
+    focus: "Make the denominator 100 and read off the percent",
+    difficulty: "Med-Hard",
+    icon: "🚀",
+    color: "from-amber-500 to-emerald-600",
+  },
+  {
+    id: 7,
+    title: "Basket Bay",
+    questionRange: "Questions 61–70",
+    focus: "Match fractions, decimals and percents that are equal",
+    difficulty: "Med-Hard",
+    icon: "🧺",
+    color: "from-emerald-500 to-teal-600",
+  },
+  {
+    id: 8,
+    title: "Number Nest",
+    questionRange: "Questions 71–80",
+    focus: "Compare mixed fractions, decimals and percents",
+    difficulty: "Hard",
+    icon: "🔢",
+    color: "from-teal-500 to-cyan-600",
+  },
+  {
+    id: 9,
+    title: "Rainbow Groups",
+    questionRange: "Questions 81–90",
+    focus: "Percents bigger than 100% and smaller than 1%",
+    difficulty: "Hard",
+    icon: "🌈",
+    color: "from-cyan-500 to-blue-600",
+  },
+  {
+    id: 10,
+    title: "Division Castle",
+    questionRange: "Questions 91–100",
+    focus: "MOE Primary 6 exam-style word problems",
+    difficulty: "Hard",
+    icon: "🏰",
+    color: "from-yellow-400 to-amber-500",
+  }
+];
+
+export default worldsData;
+
