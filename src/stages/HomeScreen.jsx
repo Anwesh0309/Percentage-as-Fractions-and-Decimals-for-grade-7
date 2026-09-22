@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useAppStore from '../store/useAppStore';
-import { narrationScript } from '../data/narration';
+import { narrationScript, homeNarration } from '../data/narration';
+import { narrate, soundEngine } from '../utils/audio';
 import { Sparkles, Search, BookOpen, Sliders, Gamepad2, Trophy, ArrowRight } from 'lucide-react';
 
 export const HomeScreen = () => {
   const { setStage } = useAppStore();
 
+  useEffect(() => {
+    return () => soundEngine.stop();
+  }, []);
+
   const handleMascotSpeak = () => {
-    // Audio narration disabled for intro phase
+    narrate(homeNarration());
   };
 
   return (

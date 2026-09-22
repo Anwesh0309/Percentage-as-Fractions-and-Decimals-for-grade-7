@@ -119,7 +119,10 @@ class SoundEngine {
         this.isPlaying = false;
         resolve(result);
       };
-      this.cancelCurrent = () => done('cancelled');
+      this.cancelCurrent = () => {
+        try { audio.pause(); audio.currentTime = 0; } catch { /* ignore */ }
+        done('cancelled');
+      };
       audio.onended = () => done('ended');
       audio.onerror = () => done('error');
       audio.play().catch((err) => {

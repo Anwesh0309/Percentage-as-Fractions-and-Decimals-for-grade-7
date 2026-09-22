@@ -3,7 +3,7 @@ import useAppStore from '../store/useAppStore';
 import PizzaSlicer from '../components/PizzaSlicer';
 import MathText from '../components/MathText';
 import { narrationScript, wonderNarration } from '../data/narration';
-import { narrate } from '../utils/audio';
+import { narrate, soundEngine } from '../utils/audio';
 import { Sparkles } from 'lucide-react';
 
 // wonder_prompt looks like:  Robo cuts ... Alex says: "That's ... amounts!" Is that actually true?
@@ -19,6 +19,7 @@ export const WonderStage = () => {
 
   useEffect(() => {
     narrate(wonderNarration());
+    return () => soundEngine.stop();
   }, []);
 
   return (

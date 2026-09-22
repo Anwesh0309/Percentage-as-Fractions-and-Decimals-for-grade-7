@@ -4,7 +4,7 @@ import PercentDiagramSVG from '../components/PercentDiagramSVG';
 import MathText from '../components/MathText';
 import { worldsData } from '../data/worlds';
 import { practiceWelcomeNarration, questionNarration, hintNarration, eventNarration } from '../data/narration';
-import { narrate } from '../utils/audio';
+import { narrate, soundEngine } from '../utils/audio';
 import { Heart, Flame, Star, Lock, RotateCcw, Lightbulb, CheckCircle, XCircle, Compass, RefreshCw, LogOut, X } from 'lucide-react';
 
 const RULE_BADGES = {
@@ -39,6 +39,7 @@ export const PracticeStage = () => {
     if (!activeWorldId) {
       narrate(practiceWelcomeNarration());
     }
+    return () => soundEngine.stop();
   }, [activeWorldId]);
 
   const currentQ = session.questions ? session.questions[session.currentIndex] : null;
@@ -49,6 +50,7 @@ export const PracticeStage = () => {
     if (activeWorldId && currentQ && !session.outOfHearts && !session.completed) {
       narrate(questionNarration(currentQ.id));
     }
+    return () => soundEngine.stop();
   }, [activeWorldId, session.currentIndex]);
 
   // Trigger Out of Hearts narration
@@ -56,6 +58,7 @@ export const PracticeStage = () => {
     if (session.outOfHearts) {
       narrate(eventNarration('out_of_hearts'));
     }
+    return () => soundEngine.stop();
   }, [session.outOfHearts]);
 
   // Trigger World Complete narration
@@ -63,6 +66,7 @@ export const PracticeStage = () => {
     if (session.completed) {
       narrate(eventNarration('world_complete'));
     }
+    return () => soundEngine.stop();
   }, [session.completed]);
 
   const handleStartWorld = (worldId) => {

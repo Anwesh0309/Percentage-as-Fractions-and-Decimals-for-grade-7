@@ -3,7 +3,7 @@ import useAppStore from '../store/useAppStore';
 import MathText from '../components/MathText';
 import { storySlides } from '../data/storySlides';
 import { storyNarration } from '../data/narration';
-import { narrate } from '../utils/audio';
+import { narrate, soundEngine } from '../utils/audio';
 import { ArrowRight, ArrowLeft, Volume2 } from 'lucide-react';
 
 export const StoryStage = () => {
@@ -14,6 +14,7 @@ export const StoryStage = () => {
   // Narrates the paragraph, then the key-point sentence (styled segments, preloaded back-to-back)
   useEffect(() => {
     narrate(storyNarration(storySlideIndex));
+    return () => soundEngine.stop();
   }, [storySlideIndex]);
 
   const handleMascotSpeak = () => {

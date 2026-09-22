@@ -5,7 +5,7 @@ import NumberLineSorter from '../components/NumberLineSorter';
 import ImposterDetective from '../components/ImposterDetective';
 import RealWorldLab from '../components/RealWorldLab';
 import { narrationScript, stationIntroNarration, eventNarration } from '../data/narration';
-import { narrate } from '../utils/audio';
+import { narrate, soundEngine } from '../utils/audio';
 import MathText from '../components/MathText';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 
@@ -33,6 +33,7 @@ export const SimulateStage = () => {
 
   useEffect(() => {
     narrate(stationIntroNarration(simulateStation));
+    return () => soundEngine.stop();
   }, [simulateStation]);
 
   const handleEvent = (key) => {

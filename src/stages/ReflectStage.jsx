@@ -4,7 +4,7 @@ import MathText from '../components/MathText';
 import { reflectTopics } from '../data/reflectTopics';
 import { worldsData } from '../data/worlds';
 import { narrationScript, reflectIntroNarration, reflectQuestionNarration } from '../data/narration';
-import { narrate } from '../utils/audio';
+import { narrate, soundEngine } from '../utils/audio';
 import { Star, Check } from 'lucide-react';
 
 export const ReflectStage = () => {
@@ -17,6 +17,7 @@ export const ReflectStage = () => {
 
   useEffect(() => {
     narrate(reflectIntroNarration());
+    return () => soundEngine.stop();
   }, []);
 
   const handleTopicClick = (index) => {
